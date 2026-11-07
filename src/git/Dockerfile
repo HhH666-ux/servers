@@ -38,5 +38,5 @@ COPY --from=uv --chown=app:app /app/.venv /app/.venv
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"
 
-# when running the container, add --db-path and a bind mount to the host's db file
+# Bind mount the host repository directory and pass its path as the server argument
 ENTRYPOINT ["mcp-server-git"]
